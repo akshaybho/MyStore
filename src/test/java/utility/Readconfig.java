@@ -46,4 +46,22 @@ public class Readconfig {
             throw new RuntimeException("Browser is not specified in Config file");
         }
     }
+
+    public String readDay()
+    {
+        String bday = prop.getProperty("day");
+        return bday;
+    }
+    public String readMonth()
+    {
+        String bmonth = prop.getProperty("month");
+        return bmonth;
+    }
+
+    public String readYear()
+    {
+        String byear = prop.getProperty("year");
+        return byear;
+    }
+
 }
