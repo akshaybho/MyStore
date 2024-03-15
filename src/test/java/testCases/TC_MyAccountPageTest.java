@@ -12,6 +12,7 @@ public class TC_MyAccountPageTest extends BaseClass {
 
     Utils u = new Utils();
 
+    String email = u.generateEmail();
     String password = Utils.generateSecurePassword();
 
     @Test
@@ -24,7 +25,7 @@ public class TC_MyAccountPageTest extends BaseClass {
         log.info("click on sign-in");
 
         MyAccountPage mp = new MyAccountPage(driver);
-        mp.enterEmailAddress(u.generateEmail());
+        mp.enterEmailAddress(email);
         Thread.sleep(3000);
         log.info("enter an email address");
         mp.clickOnSubmit();
