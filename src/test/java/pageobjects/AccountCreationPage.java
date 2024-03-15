@@ -25,7 +25,7 @@ public class AccountCreationPage {
         PageFactory.initElements(rdriver, this);
     }
 
-    @FindBy(css = "id_gender1")
+    @FindBy(css = "input#id_gender1")
     WebElement mrRadio;
 
     @FindBy(id = "customer_firstname")
@@ -52,7 +52,8 @@ public class AccountCreationPage {
     @FindBy(xpath = "//span[text()='Register']")
     WebElement registerBtn;
 
-    public void clickOnRadioButton(){
+    public void clickOnRadioButton()
+    {
         mrRadio.click();
     }
     public void enterFirstName()
@@ -65,9 +66,9 @@ public class AccountCreationPage {
         lastName.sendKeys("Bhogale");
     }
 
-    public void enterPassword()
+    public void enterPassword(String pwd)
     {
-        password.sendKeys(Utils.generateSecurePassword());
+        password.sendKeys(pwd);
     }
 
     public void selectDOB()
