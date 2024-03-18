@@ -8,17 +8,17 @@ import pageobjects.MyAccountPage;
 import pageobjects.RegisteredUserAccountPage;
 import utility.Utils;
 
+import java.io.IOException;
+
 public class TC_MyAccountPageTest extends BaseClass {
 
-    Utils u = new Utils();
 
-    String email = u.generateEmail();
-    String password = Utils.generateSecurePassword();
 
-    @Test
+
+
+    @Test(priority = 0)
     public void verifyRegistrationAndLogin() throws InterruptedException {
-        driver.get(url);
-        log.info("url opened");
+
 
         IndexPage ip = new IndexPage(driver);
         ip.clickOSignIn();
@@ -57,6 +57,8 @@ public class TC_MyAccountPageTest extends BaseClass {
         Assert.assertEquals("Akshay Bhogale", userName);
 
     }
+
+
 
 
 

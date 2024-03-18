@@ -22,6 +22,15 @@ public class MyAccountPage {
     @FindBy(css = "button#SubmitCreate")
     WebElement SubmitCreate;
 
+    @FindBy(id = "email")
+    WebElement RegEmail;
+
+    @FindBy(id = "passwd")
+    WebElement Regpassword;
+
+    @FindBy(id = "SubmitLogin")
+    WebElement submitLogin;
+
     public void enterEmailAddress(String newEmail)
     {
         createEmailId.sendKeys(newEmail);
@@ -31,5 +40,20 @@ public class MyAccountPage {
     {
 
         SubmitCreate.click();
+    }
+
+    public void enetrRegiEmail(String mail)
+    {
+        RegEmail.sendKeys(mail);
+    }
+
+    public void eneterRegiPass(String pass)
+    {
+        Regpassword.sendKeys(pass);
+    }
+
+    public void submitLoginBtn()
+    {
+        submitLogin.click();
     }
 }
