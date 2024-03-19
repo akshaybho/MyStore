@@ -13,6 +13,8 @@ import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ExtentListenerClass implements ITestListener {
 
@@ -22,7 +24,9 @@ public class ExtentListenerClass implements ITestListener {
 
     public void configureReport()
     {
-        htmlReporter = new ExtentSparkReporter("E:\\MyStore\\Reports\\testReports.html");
+        String timeStamp = new SimpleDateFormat("yyyy.mm.dd hh:mm:ss").format(new Date());
+        String reportName = "MyStoreTestReport-"+timeStamp+".html";
+        htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"//Reports//"+reportName);
         reports = new ExtentReports();
         reports.attachReporter(htmlReporter);
 
@@ -34,7 +38,7 @@ public class ExtentListenerClass implements ITestListener {
         //configuration to change look and feel of report
         htmlReporter.config().setDocumentTitle("MyStore Reports");
         htmlReporter.config().setReportName("This is my MysStore Report");
-        htmlReporter.config().setTheme(Theme.DARK);
+        htmlReporter.config().setTheme(Theme.STANDARD);
     }
     public void onStart(ITestContext Result)
     {

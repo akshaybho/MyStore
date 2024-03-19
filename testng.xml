@@ -8,6 +8,7 @@
     <classes>
       <class name="testCases.TC_MyAccountPageTest"/>
       <class name="testCases.TestLoginwithRegistered"/>
+      <class name = "testCases.CartValidationPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
