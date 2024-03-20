@@ -18,6 +18,8 @@ public class RegisteredUserAccountPage {
     @FindBy(xpath = "//a[@title = 'View my customer account']")
     WebElement userName;
 
+    @FindBy(linkText = "Sign Out")
+    WebElement signOut;
 
     public String getUserName()
     {
@@ -26,5 +28,9 @@ public class RegisteredUserAccountPage {
         return text;
     }
 
+    public void clickOnSignOut()
+    {
+        signOut.click();
+    }
 
 }
