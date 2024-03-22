@@ -1,5 +1,6 @@
 package utility;
 
+import com.google.gson.JsonParser;
 import org.passay.CharacterRule;
 import org.passay.EnglishCharacterData;
 import org.passay.PasswordGenerator;

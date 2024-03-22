@@ -3,6 +3,7 @@ package testCases;
 import com.aventstack.extentreports.utils.FileUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.hc.client5.http.utils.Base64;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
@@ -17,7 +18,10 @@ import utility.Readconfig;
 import utility.Utils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +33,9 @@ public class BaseClass {
 
     public static WebDriver driver;
 
+    public static Properties p;
+    public static FileInputStream input;
+
     static String email = u.generateEmail();
     static String password = Utils.generateSecurePassword();
 
@@ -38,9 +45,12 @@ public class BaseClass {
     public static Logger log;
 
     @BeforeClass
-    public void setUp()
-    {
+    public void setUp() throws IOException {
         System.out.println("Enter your preferred Browser");
+        p = new Properties();
+
+        input = new FileInputStream(System.getProperty("user.dir") + "\\testData\\credentials.properties");
+        p.load(input);
 
 
         switch(browser.toLowerCase())
@@ -94,5 +104,12 @@ public class BaseClass {
         File dest = new File(System.getProperty("user.dir")+"//ScreenShots//"+testName+".png");
 
         FileUtils.copyFile(src, dest);
+    }
+
+    public static String decodeString(String pwd) throws IOException
+    {
+
+            byte []decodedString = Base64.decodeBase64(pwd);
+            return (new String(decodedString));
     }
 }
