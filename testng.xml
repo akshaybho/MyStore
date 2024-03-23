@@ -3,12 +3,15 @@
 <suite name="Suite">
   <listeners>
     <listener class-name="utility.ExtentListenerClass"></listener>
+    <listener class-name="io.qameta.allure.testng.AllureTestNg"></listener>
   </listeners>
   <test name="Test">
     <classes>
       <class name="testCases.TC_MyAccountPageTest"/>
       <class name="testCases.TestLoginwithRegistered"/>
       <class name = "testCases.CartValidationPageTest"/>
+      <class name = "testCases.DataDrivenTest"/>
+      <class name="testCases.SearchProductTest"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
