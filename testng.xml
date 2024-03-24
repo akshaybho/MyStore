@@ -13,6 +13,7 @@
       <class name = "testCases.DataDrivenTest"/>
       <class name="testCases.SearchProductTest"/>
       <class name ="testCases.HoverPageTest"/>
+      <class name="testCases.DressPriceTest"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
