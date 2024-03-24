@@ -24,7 +24,7 @@ public class DataDrivenTest extends BaseClass {
         mp = new MyAccountPage(driver);
         mp.enetrRegiEmail(userEmail);
         mp.eneterRegiPass(userPassword);
-        mp.clickOnSubmit();
+        mp.submitLoginBtn();
         r = new RegisteredUserAccountPage(driver);
         String userName = r.getUserName();
         if(userName.equals(expectedUserName))

@@ -1,5 +1,6 @@
 package actiondriver;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,17 +21,23 @@ public class Action extends BaseClass {
         {
             e.printStackTrace();
         }
-        finally
+
+        return flag;
+    }
+
+    public boolean scrollWindow(WebDriver driver)
+    {
+        boolean flag = false;
+        try
         {
-            if(flag)
-            {
-                System.out.println("MouseHover action is performed");
-            }
-            else
-            {
-                System.out.println("MouseHover action is not performed");
-            }
+            JavascriptExecutor js = (JavascriptExecutor)driver;
+            js.executeScript("window.scrollBy(0,900)","");
         }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
         return flag;
     }
 }

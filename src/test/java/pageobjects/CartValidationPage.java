@@ -72,7 +72,7 @@ public class CartValidationPage {
         else
         {
             System.out.println("====FAIL====");
-            Assert.assertTrue(false);
+            Assert.fail();
         }
     }
 }

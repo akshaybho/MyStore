@@ -39,4 +39,23 @@ public class Utils {
 
         return password;
     }
+
+    public static boolean isAscending(String data)
+    {
+        String[] numbersAsString = data.split("\n");
+
+        int[] numbers = new int[numbersAsString.length];
+        for(int i=0; i<numbersAsString.length; i++)
+        {
+            numbers[i] = Integer.parseInt(numbersAsString[i].substring(1));
+        }
+        for(int i=0; i<numbers.length-1; i++)
+        {
+            if(numbers[i]>numbers[i+1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
