@@ -64,5 +64,16 @@ public class Readconfig {
         return byear;
     }
 
+    public String getDressURL()
+    {
+        String dressurl = prop.getProperty("dressURL");
+
+        if(dressurl!=null){
+            return dressurl;
+        }
+        else{
+            throw new RuntimeException("Browser is not specified in Config file");
+        }
+    }
 
 }
