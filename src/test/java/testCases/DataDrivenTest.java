@@ -1,5 +1,6 @@
 package testCases;
 
+import enums.BrowserType;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,6 +8,8 @@ import pageobjects.IndexPage;
 import pageobjects.MyAccountPage;
 import pageobjects.RegisteredUserAccountPage;
 import utility.ReadExcel;
+
+import java.io.IOException;
 
 public class DataDrivenTest extends BaseClass {
 
@@ -17,8 +20,8 @@ public class DataDrivenTest extends BaseClass {
     RegisteredUserAccountPage r;
 
     @Test(dataProvider = "LoginDataProvider")
-    public void veriFyLogin(String userEmail, String userPassword, String expectedUserName)
-    {
+    public void veriFyLogin(String userEmail, String userPassword, String expectedUserName) throws IOException {
+        setUp(BrowserType.CHROME);
         ip = new IndexPage(driver);
         ip.clickOSignIn();
         mp = new MyAccountPage(driver);
@@ -36,6 +39,7 @@ public class DataDrivenTest extends BaseClass {
             Assert.assertTrue(false);
         }
         r.clickOnSignOut();
+        tearDown();
     }
 
     @DataProvider(name = "LoginDataProvider")

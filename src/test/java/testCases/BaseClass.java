@@ -1,6 +1,7 @@
 package testCases;
 
 import com.aventstack.extentreports.utils.FileUtil;
+import enums.BrowserType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.hc.client5.http.utils.Base64;
@@ -39,13 +40,13 @@ public class BaseClass {
     static String email = u.generateEmail();
     static String password = Utils.generateSecurePassword();
 
-    String browser = read.getBrowser();
+    //String browser = read.getBrowser();
     //Scanner sc = new Scanner(System.in);
 
     public static Logger log;
 
-    @BeforeClass
-    public void setUp() throws IOException {
+
+    public void setUp(BrowserType browser) throws IOException {
         System.out.println("Enter your preferred Browser");
         p = new Properties();
 
@@ -53,24 +54,24 @@ public class BaseClass {
         p.load(input);
 
 
-        switch(browser.toLowerCase())
+        switch(browser)
         {
-            case "chrome":
+            case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
 
-            case "firefox":
+            case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
 
-            case "edge":
+            case EDGE:
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
                 break;
 
-            case "headless":
+            case HEADLESS:
                 WebDriverManager.chromiumdriver().setup();
                 ChromeOptions option = new ChromeOptions();
                 option.addArguments("headless");
@@ -89,7 +90,7 @@ public class BaseClass {
 
     }
 
-    @AfterClass
+
     public void tearDown()
     {
         driver.close();

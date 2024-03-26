@@ -1,5 +1,6 @@
 package testCases;
 
+import enums.BrowserType;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.AccountCreationPage;
@@ -17,9 +18,9 @@ public class TC_MyAccountPageTest extends BaseClass {
 
 
     @Test(priority = 0)
-    public void verifyRegistrationAndLogin() throws InterruptedException {
+    public void verifyRegistrationAndLogin() throws InterruptedException, IOException {
 
-
+        setUp(BrowserType.CHROME);
         IndexPage ip = new IndexPage(driver);
         ip.clickOSignIn();
         log.info("click on sign-in");
@@ -56,6 +57,7 @@ public class TC_MyAccountPageTest extends BaseClass {
 
         Assert.assertEquals("Akshay Bhogale", userName);
 
+        tearDown();
     }
 
 

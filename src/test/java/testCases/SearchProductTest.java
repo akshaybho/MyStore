@@ -1,5 +1,6 @@
 package testCases;
 
+import enums.BrowserType;
 import org.testng.annotations.Test;
 import pageobjects.IndexPage;
 import pageobjects.MyAccountPage;
@@ -14,6 +15,7 @@ public class SearchProductTest extends BaseClass {
     @Test
     public void verifyProductTest() throws InterruptedException, IOException {
 
+        setUp(BrowserType.CHROME);
         String mail = p.getProperty("emailId");
         String pass = BaseClass.decodeString(p.getProperty("password"));
 
@@ -35,7 +37,7 @@ public class SearchProductTest extends BaseClass {
         sp.clickOnSearchButton();
         Thread.sleep(3000);
         sp.verifyProduct();
-
+        tearDown();
 
     }
 

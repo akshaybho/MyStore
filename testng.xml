@@ -14,6 +14,7 @@
       <class name="testCases.SearchProductTest"/>
       <class name ="testCases.HoverPageTest"/>
       <class name="testCases.DressPriceTest"></class>
+      <class name="testCases.ValidateColorTest"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

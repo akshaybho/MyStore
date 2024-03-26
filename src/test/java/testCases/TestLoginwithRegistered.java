@@ -1,5 +1,6 @@
 package testCases;
 
+import enums.BrowserType;
 import org.testng.annotations.Test;
 import pageobjects.IndexPage;
 import pageobjects.MyAccountPage;
@@ -11,6 +12,7 @@ public class TestLoginwithRegistered extends BaseClass{
 
     @Test(priority = 1)
     public void verifyLogin() throws IOException {
+        setUp(BrowserType.CHROME);
         IndexPage i = new IndexPage(driver);
         i.clickOSignIn();
         MyAccountPage m = new MyAccountPage(driver);
@@ -30,6 +32,6 @@ public class TestLoginwithRegistered extends BaseClass{
             captureScreenShot(driver,"verifyLogin");
             System.out.println("====FAIL====");
         }
-
+        tearDown();
     }
 }

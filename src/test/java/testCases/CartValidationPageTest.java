@@ -1,12 +1,16 @@
 package testCases;
 
+import enums.BrowserType;
 import org.testng.annotations.Test;
 import pageobjects.CartValidationPage;
+
+import java.io.IOException;
 
 public class CartValidationPageTest extends BaseClass {
 
     @Test
-    public void verifyCartItem() throws InterruptedException {
+    public void verifyCartItem() throws InterruptedException, IOException {
+        setUp(BrowserType.CHROME);
         CartValidationPage c = new CartValidationPage(driver);
         c.clickOnTshirts();
         Thread.sleep(2000);
@@ -20,5 +24,6 @@ public class CartValidationPageTest extends BaseClass {
         Thread.sleep(2000);
         c.cartProductVerify();
         Thread.sleep(2000);
+        tearDown();
     }
 }
