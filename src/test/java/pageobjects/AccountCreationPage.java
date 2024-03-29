@@ -1,5 +1,6 @@
 package pageobjects;
 
+import actiondriver.Action;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,7 +16,7 @@ public class AccountCreationPage {
 
     Readconfig r = new Readconfig();
 
-
+    Action a = new Action();
     WebDriver ldriver;
 
     public AccountCreationPage(WebDriver rdriver)
@@ -73,14 +74,9 @@ public class AccountCreationPage {
 
     public void selectDOB()
     {
-        Select daySelection = new Select(dayofBirth);
-        daySelection.selectByValue(r.readDay());
-
-        Select monthSelection = new Select(monthofBirth);
-        monthSelection.selectByValue(r.readMonth());
-
-        Select yearSelection = new Select(yearofBirth);
-        yearSelection.selectByValue(r.readYear());
+        a.selectByValue(dayofBirth, r.readDay());
+        a.selectByValue(monthofBirth, r.readMonth());
+        a.selectByValue(yearofBirth, r.readYear());
     }
 
     public void clickOnCheckBox()

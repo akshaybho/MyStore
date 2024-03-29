@@ -10,10 +10,6 @@ import java.io.IOException;
 
 
 public class ValidateColorTest extends BaseClass {
-
-
-
-
     @Test
     public void verifyColor() throws InterruptedException, IOException {
         setUp(BrowserType.CHROME);
