@@ -1,12 +1,15 @@
 package testCases;
 
 import enums.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pageobjects.CartValidationPage;
 
 import java.io.IOException;
 
 public class CartValidationPageTest extends BaseClass {
+
+
 
     @Test
     public void verifyCartItem() throws InterruptedException, IOException {

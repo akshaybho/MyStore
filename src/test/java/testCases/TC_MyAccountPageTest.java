@@ -1,6 +1,7 @@
 package testCases;
 
 import enums.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.AccountCreationPage;
@@ -12,7 +13,6 @@ import utility.Utils;
 import java.io.IOException;
 
 public class TC_MyAccountPageTest extends BaseClass {
-
 
 
 

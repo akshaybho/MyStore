@@ -1,6 +1,7 @@
 package testCases;
 
 import enums.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pageobjects.IndexPage;
 import pageobjects.MyAccountPage;
@@ -10,6 +11,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class SearchProductTest extends BaseClass {
+
+
 
 
     @Test

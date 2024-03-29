@@ -1,6 +1,7 @@
 package testCases;
 
 import enums.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,6 +19,8 @@ public class DataDrivenTest extends BaseClass {
     MyAccountPage mp;
 
     RegisteredUserAccountPage r;
+
+
 
     @Test(dataProvider = "LoginDataProvider")
     public void veriFyLogin(String userEmail, String userPassword, String expectedUserName) throws IOException {

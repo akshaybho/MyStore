@@ -1,6 +1,7 @@
 package testCases;
 
 import com.aventstack.extentreports.utils.FileUtil;
+import driverFactory.Drivers;
 import enums.BrowserType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -26,13 +27,11 @@ import java.util.Properties;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class BaseClass {
+public class BaseClass extends Drivers {
     static Utils u = new Utils();
     Readconfig read = new Readconfig();
 
     String url = read.getBaseUrl();
-
-    public static WebDriver driver;
 
     public static Properties p;
     public static FileInputStream input;
@@ -46,6 +45,7 @@ public class BaseClass {
     public static Logger log;
 
 
+
     public void setUp(BrowserType browser) throws IOException {
         System.out.println("Enter your preferred Browser");
         p = new Properties();
@@ -57,25 +57,19 @@ public class BaseClass {
         switch(browser)
         {
             case CHROME:
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                getChrome();
                 break;
 
             case FIREFOX:
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
+               getFirefox();
                 break;
 
             case EDGE:
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
+               getEdge();
                 break;
 
             case HEADLESS:
-                WebDriverManager.chromiumdriver().setup();
-                ChromeOptions option = new ChromeOptions();
-                option.addArguments("headless");
-                driver = new ChromeDriver(option);
+               getHeadless();
                 break;
 
         }

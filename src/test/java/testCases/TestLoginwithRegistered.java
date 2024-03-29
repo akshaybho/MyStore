@@ -1,6 +1,7 @@
 package testCases;
 
 import enums.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pageobjects.IndexPage;
 import pageobjects.MyAccountPage;
@@ -9,6 +10,8 @@ import pageobjects.RegisteredUserAccountPage;
 import java.io.IOException;
 
 public class TestLoginwithRegistered extends BaseClass{
+
+
 
     @Test(priority = 1)
     public void verifyLogin() throws IOException {

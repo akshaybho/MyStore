@@ -1,6 +1,7 @@
 package testCases;
 
 import enums.BrowserType;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pageobjects.DressPricePage;
 import utility.Utils;
@@ -8,6 +9,8 @@ import utility.Utils;
 import java.io.IOException;
 
 public class DressPriceTest extends BaseClass{
+
+
 
     @Test
     public void validatePrices() throws InterruptedException, IOException {
