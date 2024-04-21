@@ -1,5 +1,6 @@
 package pageobjects;
 
+import constants.CartValidationPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,22 +18,22 @@ public class CartValidationPage {
         PageFactory.initElements(rdriver, this);
     }
 
-    @FindBy(xpath = "//div[@id ='block_top_menu']/ul/li[3]/a")
+    @FindBy(xpath = CartValidationPageLocators.T_SHIRTS)
     WebElement t_shirts;
 
-    @FindBy(xpath = "//div[@class = 'right-block']/h5/a")
+    @FindBy(xpath = CartValidationPageLocators.SELECT_ITEMS)
     WebElement itemSelect;
 
-    @FindBy(css = "select#group_1")
+    @FindBy(css = CartValidationPageLocators.SIZE_OF_DROPDOWN)
     WebElement sizeDropDown;
 
-    @FindBy(xpath = "//button[@name = 'Submit']")
+    @FindBy(xpath = CartValidationPageLocators.ADD_TO_CART)
     WebElement addToCart;
 
-    @FindBy(css = "a.btn.btn-default.button.button-medium")
+    @FindBy(css = CartValidationPageLocators.PROCEED)
     WebElement proceed;
 
-    @FindBy(xpath = "//td//p[@class = 'product-name']/a")
+    @FindBy(xpath = CartValidationPageLocators.PRODUCT_IN_CART)
     WebElement cartProduct;
 
     public void clickOnTshirts() throws InterruptedException {

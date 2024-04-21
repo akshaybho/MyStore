@@ -1,16 +1,12 @@
 package pageobjects;
 
 import actiondriver.Action;
+import constants.AccountCreationPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import utility.Readconfig;
-import utility.Utils;
-
-import java.io.FileInputStream;
-import java.util.Properties;
 
 public class AccountCreationPage {
 
@@ -22,35 +18,34 @@ public class AccountCreationPage {
     public AccountCreationPage(WebDriver rdriver)
     {
         ldriver = rdriver;
-
         PageFactory.initElements(rdriver, this);
     }
 
-    @FindBy(css = "input#id_gender1")
+    @FindBy(css = AccountCreationPageLocators.MR_RADIO_BUTTON)
     WebElement mrRadio;
 
-    @FindBy(id = "customer_firstname")
+    @FindBy(id = AccountCreationPageLocators.FIRSTNAME)
     WebElement firstName;
 
-    @FindBy(name = "customer_lastname")
+    @FindBy(name = AccountCreationPageLocators.LASTNAME)
     WebElement lastName;
 
-    @FindBy(xpath = "//input[@type='password']")
+    @FindBy(xpath = AccountCreationPageLocators.PASSWORD)
     WebElement password;
 
-    @FindBy(id = "days")
+    @FindBy(id = AccountCreationPageLocators.DAY_OF_BIRTH)
     WebElement dayofBirth;
 
-    @FindBy(id = "months")
+    @FindBy(id = AccountCreationPageLocators.MONTH_OF_BIRTH)
     WebElement monthofBirth;
 
-    @FindBy(id = "years")
+    @FindBy(id = AccountCreationPageLocators.YEAR_OF_BIRTH)
     WebElement yearofBirth;
 
-    @FindBy(id = "newsletter")
+    @FindBy(id = AccountCreationPageLocators.NEWS_LETTER)
     WebElement checkNewsLetter;
 
-    @FindBy(xpath = "//span[text()='Register']")
+    @FindBy(xpath = AccountCreationPageLocators.REGISTER_BUTTON)
     WebElement registerBtn;
 
     public void clickOnRadioButton()

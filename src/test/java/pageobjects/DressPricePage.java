@@ -24,19 +24,10 @@ public class DressPricePage {
         ldriver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
-
     @FindBy(xpath = "(//a[text()='Dresses'])[2]")
     WebElement Dresses;
-
     @FindBy(css = "select#selectProductSort")
     WebElement dropDown;
-
-    //@FindBy(xpath = "//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[1]/div/div[2]/span[1]")
-    //List<WebElement> priceOfDress;
-
-   // @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[1]/div/a[1]/img")
-    //WebElement img;
-
     public void clickOnDresses()
     {
         Dresses.click();
