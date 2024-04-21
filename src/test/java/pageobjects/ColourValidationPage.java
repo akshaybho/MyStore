@@ -1,5 +1,6 @@
 package pageobjects;
 
+import constants.ColourValidationPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,13 +16,13 @@ public class ColourValidationPage {
         ldriver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
-    @FindBy(xpath = "(//a[contains(text(), 'T-shirts')])[2]")
+    @FindBy(xpath = ColourValidationPageLocators.T_SHIRTS)
     WebElement Tshirts;
 
-    @FindBy(xpath = "//div[@class='right-block']/h5/a")
+    @FindBy(xpath = ColourValidationPageLocators.CHOOSE_TSHIRT)
     WebElement chooseTshirt;
 
-    @FindBy(css = "#color_14")
+    @FindBy(css = ColourValidationPageLocators.SELECT_COLOUR)
     WebElement colourSelect;
 
     public void verifyColour() throws InterruptedException {

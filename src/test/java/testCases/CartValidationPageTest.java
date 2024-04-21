@@ -9,8 +9,6 @@ import java.io.IOException;
 
 public class CartValidationPageTest extends BaseClass {
 
-
-
     @Test
     public void verifyCartItem() throws InterruptedException, IOException {
         setUp(BrowserType.CHROME);

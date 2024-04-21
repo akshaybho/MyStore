@@ -24,7 +24,7 @@ public class Drivers {
     static String URL = read.getBaseUrl();
     public WebDriver getChrome()
     {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().clearDriverCache().setup();
         driver = new ChromeDriver();
         return driver;
     }
