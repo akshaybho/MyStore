@@ -1,6 +1,7 @@
 package pageobjects;
 
 import actiondriver.Action;
+import constants.DressPricePageLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,9 +25,9 @@ public class DressPricePage {
         ldriver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
-    @FindBy(xpath = "(//a[text()='Dresses'])[2]")
+    @FindBy(xpath = DressPricePageLocators.DRESSES_TAB)
     WebElement Dresses;
-    @FindBy(css = "select#selectProductSort")
+    @FindBy(css = DressPricePageLocators.DROP_DOWN)
     WebElement dropDown;
     public void clickOnDresses()
     {
