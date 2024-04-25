@@ -1,5 +1,6 @@
 package pageobjects;
 
+import actiondriver.Action;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +17,7 @@ public class SearchProductPage {
         PageFactory.initElements(rdriver, this);
     }
 
+    Action a = new Action();
     @FindBy(id = "search_query_top")
     WebElement searchBar;
 
@@ -39,12 +41,6 @@ public class SearchProductPage {
 
     public void verifyProduct()
     {
-        String product = productText.getText();
-        product.trim();
-        String expected = "Faded Short Sleeve T-shirts";
-        if(expected.equals(product))
-        {
-            Assert.assertTrue(true);
-        }
+        a.verifyMethod(ldriver, "Faded Short Sleeve T-shirts", productText);
     }
 }

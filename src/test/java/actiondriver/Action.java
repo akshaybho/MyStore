@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import testCases.BaseClass;
 
 public class Action extends BaseClass {
@@ -67,6 +68,31 @@ public class Action extends BaseClass {
             driver.navigate().to(url);
             flag = true;
             return true;
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+    }
+
+    public boolean verifyMethod(WebDriver driver, String data, WebElement ele)
+    {
+        boolean flag = false;
+        try
+        {
+            String actual = ele.getText();
+            if(actual.equals(data))
+            {
+                Assert.assertTrue(true);
+                flag = true;
+                return true;
+            }
+            else
+            {
+                Assert.fail();
+                return false;
+            }
+
         }
         catch(Exception e)
         {
