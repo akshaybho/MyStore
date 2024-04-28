@@ -1,5 +1,6 @@
 package pageobjects;
 
+import constants.MyAccountPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,19 +17,19 @@ public class MyAccountPage {
         PageFactory.initElements(rdriver, this);
     }
 
-    @FindBy(id ="email_create")
+    @FindBy(id = MyAccountPageLocators.CREATE_EMAILID_BUTTON)
     WebElement createEmailId;
 
-    @FindBy(css = "button#SubmitCreate")
+    @FindBy(css = MyAccountPageLocators.SUBMIT_BUTTON)
     WebElement SubmitCreate;
 
-    @FindBy(id = "email")
+    @FindBy(id = MyAccountPageLocators.WRITE_EMAILID)
     WebElement RegEmail;
 
-    @FindBy(id = "passwd")
+    @FindBy(id = MyAccountPageLocators.WRITE_PASSWORD)
     WebElement Regpassword;
 
-    @FindBy(id = "SubmitLogin")
+    @FindBy(id = MyAccountPageLocators.SUBMIT_LOGIN_BUTTON)
     WebElement submitLogin;
 
     public void enterEmailAddress(String newEmail)

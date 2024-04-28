@@ -1,5 +1,6 @@
 package pageobjects;
 
+import constants.RegisteredUserAccountPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,10 +16,10 @@ public class RegisteredUserAccountPage {
         ldriver = rdriver;
         PageFactory.initElements(rdriver, this);
     }
-    @FindBy(xpath = "//a[@title = 'View my customer account']")
+    @FindBy(xpath = RegisteredUserAccountPageLocators.USERNAME)
     WebElement userName;
 
-    @FindBy(linkText = "Sign Out")
+    @FindBy(linkText = RegisteredUserAccountPageLocators.SIGN_OUT_BUTTON)
     WebElement signOut;
 
     public String getUserName()

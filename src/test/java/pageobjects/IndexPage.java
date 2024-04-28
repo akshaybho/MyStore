@@ -1,5 +1,6 @@
 package pageobjects;
 
+import constants.IndexPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +17,7 @@ public class IndexPage {
         PageFactory.initElements(rdriver, this);
     }
 
-    @FindBy(linkText = "Sign in")
+    @FindBy(linkText = IndexPageLocators.SIGN_IN_BUTTON)
     WebElement signIn;
 
     public void clickOSignIn()

@@ -1,6 +1,7 @@
 package pageobjects;
 
 import actiondriver.Action;
+import constants.SearchProductPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,13 +19,13 @@ public class SearchProductPage {
     }
 
     Action a = new Action();
-    @FindBy(id = "search_query_top")
+    @FindBy(id = SearchProductPageLocators.SEARCH_BAR)
     WebElement searchBar;
 
-    @FindBy(name = "submit_search")
+    @FindBy(name = SearchProductPageLocators.SUBMIT_BUTTON)
     WebElement submitBtn;
 
-    @FindBy(xpath = "//div[@class='right-block']/h5/a")
+    @FindBy(xpath = SearchProductPageLocators.PRODUCT_TEXT)
     WebElement productText;
 
 
